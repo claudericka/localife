@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  localife:
+    container_name: localife
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3000
+    environment:
+      - DEVELOPMENT=true
+    stdin_open: true
