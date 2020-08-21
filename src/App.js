@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box';
 import Link from '@material-ui/core/Link';
 import ProTip from './ProTip';
 import Header from './Header';
+import SearchArea from './SearchArea';
 
 function Copyright() {
   return (
@@ -28,8 +29,11 @@ function App() {
         <ProTip />
         <Copyright />
       </Box>*/
-      <Box my={4}>
+      <Box>
         <Header />
+        <Container>
+           <SearchArea />
+        </Container>
       </Box>
   );
 }
