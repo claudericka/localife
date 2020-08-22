@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+import Header from './Header';
+import SearchArea from './SearchArea';
+import Category from './Category';
+import Footer from './Footer';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+}));
 
 function App() {
+
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Box>
+        <Header />
+        <div className={classes.heroContent}>
+            <Container>
+               <SearchArea />
+            </Container>
+            <Container>
+               <Category />
+            </Container>
+        </div>
+        <Footer />
+      </Box>
   );
 }
 
