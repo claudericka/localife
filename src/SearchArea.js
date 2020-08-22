@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,11 +13,14 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: '25ch',
+    flex: 1,
   },
   searchForm: {
   display: 'flex',
   flexWrap: 'wrap',
+  },
+  searchWrap: {
+  flex: 1,
   }
 }));
 
@@ -24,12 +28,13 @@ export default function SearchArea() {
   const classes = useStyles();
 
   return (
+  <Container maxWidth="lg">
     <div className={classes.root}>
+      <div className={classes.searchWrap}>
       <div>
-      <div>
-        <Typography variant="h6" noWrap>
-            Découvrez et réservez des services et produits locaux
-          </Typography>
+         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              Découvrez et réservez vos produits et services locaux
+            </Typography>
           </div>
           <div className={classes.searchForm}>
         <TextField
@@ -61,7 +66,8 @@ export default function SearchArea() {
               Rechercher
             </Button>
             </div>
-      </div>
+            </div>
     </div>
+    </Container>
   );
 }
