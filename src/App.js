@@ -4,6 +4,7 @@ import Box from '@material-ui/core/Box';
 import Header from './Header';
 import SearchArea from './SearchArea';
 import Category from './Category';
+import Footer from './Footer';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +29,7 @@ function App() {
                <Category />
             </Container>
         </div>
+        <Footer />
       </Box>
   );
 }
