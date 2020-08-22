@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
     width: '25ch',
   },
+  searchForm: {
+  display: 'flex',
+  flexWrap: 'wrap',
+  }
 }));
 
 export default function SearchArea() {
@@ -20,123 +26,41 @@ export default function SearchArea() {
   return (
     <div className={classes.root}>
       <div>
+      <div>
+        <Typography variant="h6" noWrap>
+            Découvrez et réservez des services et produits locaux
+          </Typography>
+          </div>
+          <div className={classes.searchForm}>
         <TextField
-          id="standard-full-width"
-          label="Label"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField
-          label="None"
-          id="margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-        />
-        <TextField
-          label="Dense"
-          id="margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-        />
-        <TextField
-          label="Normal"
+          label="Quoi"
           id="margin-normal"
-          defaultValue="Default Value"
+          margin="normal"
+          defaultValue="Traiteur, coiffeur, photographe ..."
           className={classes.textField}
-          helperText="Some important text"
+          style={{ marginLeft: 8 }}
+        />
+        <TextField
+          label="Où"
+          id="margin-normal"
+          defaultValue="A proximité, adresse"
+          className={classes.textField}
           margin="normal"
         />
-      </div>
-      <div>
         <TextField
-          id="filled-full-width"
-          label="Label"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
-          fullWidth
+          label="Quand"
+          id="margin-normal"
+          defaultValue="A tout moment"
+          className={classes.textField}
           margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="filled"
         />
-        <TextField
-          label="None"
-          id="filled-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="filled"
-        />
-        <TextField
-          label="Dense"
-          id="filled-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="filled"
-        />
-        <TextField
-          label="Normal"
-          id="filled-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
-          variant="filled"
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-full-width"
-          label="Label"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-        <TextField
-          label="None"
-          id="outlined-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="outlined"
-        />
-        <TextField
-          label="Dense"
-          id="outlined-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="outlined"
-        />
-        <TextField
-          label="Normal"
-          id="outlined-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
-          variant="outlined"
-        />
+        <Button
+        variant="contained"
+        color="primary"
+        className={classes.textField}>
+              Rechercher
+            </Button>
+            </div>
       </div>
     </div>
   );
