@@ -149,7 +149,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Localife
+            <Link to="/">Localife</Link>
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
