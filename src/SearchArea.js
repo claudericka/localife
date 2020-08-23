@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexWrap: 'wrap',
   },
+  searchTitle: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
@@ -18,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   searchForm: {
   display: 'flex',
   flexWrap: 'wrap',
+    paddingBottom: theme.spacing(8),
   },
   searchWrap: {
   flex: 1,
@@ -31,7 +36,7 @@ export default function SearchArea() {
   <Container maxWidth="lg">
     <div className={classes.root}>
       <div className={classes.searchWrap}>
-      <div>
+        <div className={classes.searchTitle}>
          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
               Découvrez et réservez vos produits et services locaux
             </Typography>
