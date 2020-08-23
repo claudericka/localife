@@ -153,7 +153,6 @@ export default function Header() {
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Router>
             <MenuItem>
         <Button variant="contained">
               <Link to="/signIn">Se connecter</Link>
@@ -171,7 +170,6 @@ export default function Header() {
               <ShoppingCartIcon />
             </IconButton>
       </MenuItem>
-    </Router>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
@@ -190,9 +188,5 @@ export default function Header() {
       {renderMenu}
     </div>
   );
-}
-
-function SignIn() {
-  return <h2>SignIn</h2>;
 }
 

@@ -11,11 +11,10 @@ import {
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Header from './Header';
-import SearchArea from './SearchArea';
-import Category from './Category';
 import Footer from './Footer';
 import { makeStyles } from '@material-ui/core/styles';
 import SignIn from './login/SignIn';
+import Home from './Home';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -30,25 +29,19 @@ function App() {
 
   return (
       <Box>
-        <Header />
-        <div className={classes.heroContent}>
 
         <Router>
+         <Header />
+        <div className={classes.heroContent}>
           <Switch>
             <Route path="/signIn" component={SignIn} />
-            <Route path="/">
-                <Container>
-               <SearchArea />
-            </Container>
-            <Container>
-               <Category />
-            </Container>
-            </Route>
+            <Route path="/" exact component={Home}/>
           </Switch>
-        </Router>
 
         </div>
+
         <Footer />
+        </Router>
       </Box>
   );
 }
