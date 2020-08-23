@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
+} from "react-router-dom";
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Header from './Header';
@@ -6,6 +15,7 @@ import SearchArea from './SearchArea';
 import Category from './Category';
 import Footer from './Footer';
 import { makeStyles } from '@material-ui/core/styles';
+import SignIn from './login/SignIn';
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -22,12 +32,21 @@ function App() {
       <Box>
         <Header />
         <div className={classes.heroContent}>
-            <Container>
+
+        <Router>
+          <Switch>
+            <Route path="/signIn" component={SignIn} />
+            <Route path="/">
+                <Container>
                <SearchArea />
             </Container>
             <Container>
                <Category />
             </Container>
+            </Route>
+          </Switch>
+        </Router>
+
         </div>
         <Footer />
       </Box>

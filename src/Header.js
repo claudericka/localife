@@ -1,4 +1,13 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
+} from "react-router-dom";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -105,9 +114,10 @@ export default function Header() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
+    <Router>
+            <MenuItem>
         <Button variant="contained">
-              Se connecter
+              <Link to="/signIn">Se connecter</Link>
             </Button>
       </MenuItem>
       <MenuItem>
@@ -122,6 +132,7 @@ export default function Header() {
               <ShoppingCartIcon />
             </IconButton>
       </MenuItem>
+    </Router>
     </Menu>
   );
 
@@ -142,10 +153,14 @@ export default function Header() {
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button variant="contained">
-              Se connecter
+            <Router>
+            <MenuItem>
+        <Button variant="contained">
+              <Link to="/signIn">Se connecter</Link>
             </Button>
-            <IconButton
+      </MenuItem>
+      <MenuItem>
+        <IconButton
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
@@ -155,6 +170,8 @@ export default function Header() {
             >
               <ShoppingCartIcon />
             </IconButton>
+      </MenuItem>
+    </Router>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
@@ -174,3 +191,8 @@ export default function Header() {
     </div>
   );
 }
+
+function SignIn() {
+  return <h2>SignIn</h2>;
+}
+
