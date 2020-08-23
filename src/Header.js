@@ -1,12 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation
+  Link
 } from "react-router-dom";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -114,7 +108,6 @@ export default function Header() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-    <Router>
             <MenuItem>
         <Button variant="contained">
               <Link to="/signIn">Se connecter</Link>
@@ -132,7 +125,6 @@ export default function Header() {
               <ShoppingCartIcon />
             </IconButton>
       </MenuItem>
-    </Router>
     </Menu>
   );
 
